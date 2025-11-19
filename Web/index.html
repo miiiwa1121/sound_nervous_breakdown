@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音階神経衰弱</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- メニュー画面 -->
+    <div id="menu-screen" class="screen active">
+        <h1>音階神経衰弱</h1>
+        <div class="menu-buttons">
+            <button class="board-button" data-cards="16" id="btn-4x4">4x4 (16カード)</button>
+            <button class="board-button" data-cards="36" id="btn-6x6">6x6 (36カード)</button>
+            
+            <div class="time-setting">
+                <label>時間制限: <span id="time-display">60</span>秒</label>
+            </div>
+            
+            <button class="adjust-button" id="btn-adjust-time">時間を調整</button>
+            <button class="start-button" id="btn-start">開始</button>
+        </div>
+    </div>
+
+    <!-- 時間調整画面 -->
+    <div id="time-adjustment-screen" class="screen">
+        <h1>時間制限の調整</h1>
+        <div class="adjustment-content">
+            <p>現在の時間制限: <span id="current-time-limit">60</span>秒</p>
+            
+            <div class="adjustment-controls">
+                <button class="adjust-btn minus-btn" id="btn-decrease">-</button>
+                <span class="time-value" id="adjust-time-value">60</span>
+                <button class="adjust-btn plus-btn" id="btn-increase">+</button>
+            </div>
+            
+            <button class="confirm-button" id="btn-confirm">確定</button>
+        </div>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="game-screen" class="screen">
+        <div class="game-header">
+            <div class="game-info">
+                <span id="score-display">スコア: 0</span>
+                <span id="time-left-display">残り時間: 60.0</span>
+            </div>
+            <div class="game-controls">
+                <button class="pause-button" id="btn-pause">停止</button>
+                <button class="menu-return-button hidden" id="btn-return-menu">メニューに戻る</button>
+            </div>
+        </div>
+        
+        <div id="game-board" class="game-board"></div>
+    </div>
+
+    <!-- ゲーム終了画面 -->
+    <div id="game-over-screen" class="screen">
+        <h1 class="game-over-title">ゲーム終了！おめでとう！</h1>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

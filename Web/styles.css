@@ -1,0 +1,433 @@
+/* ======================================
+   グローバルスタイル
+   ====================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Meiryo', 'MS Gothic', 'Yu Gothic', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ======================================
+   画面共通スタイル
+   ====================================== */
+.screen {
+    display: none;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 42px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================================
+   メニュー画面
+   ====================================== */
+#menu-screen {
+    width: 600px;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.board-button {
+    width: 300px;
+    height: 40px;
+    font-size: 28px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.board-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.board-button.selected {
+    background-color: #00b400;
+    color: white;
+}
+
+.time-setting {
+    width: 300px;
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    padding: 15px 0;
+}
+
+.time-setting label {
+    display: block;
+}
+
+#time-display {
+    font-weight: bold;
+    color: #667eea;
+}
+
+.adjust-button {
+    width: 200px;
+    height: 40px;
+    font-size: 28px;
+    border: none;
+    border-radius: 8px;
+    background-color: #009600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.adjust-button:hover {
+    background-color: #007a00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.start-button {
+    width: 200px;
+    height: 50px;
+    font-size: 28px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.start-button:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================
+   時間調整画面
+   ====================================== */
+#time-adjustment-screen {
+    width: 600px;
+}
+
+.adjustment-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.adjustment-content p {
+    font-size: 28px;
+    color: #333;
+}
+
+#current-time-limit {
+    font-weight: bold;
+    color: #667eea;
+}
+
+.adjustment-controls {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.adjust-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.minus-btn {
+    background-color: #c80000;
+}
+
+.minus-btn:hover {
+    background-color: #a00000;
+}
+
+.plus-btn {
+    background-color: #00c800;
+}
+
+.plus-btn:hover {
+    background-color: #00a000;
+}
+
+.time-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    min-width: 80px;
+    text-align: center;
+}
+
+.confirm-button {
+    width: 200px;
+    height: 50px;
+    font-size: 28px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0000c8;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.confirm-button:hover {
+    background-color: #0000a0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================
+   ゲーム画面
+   ====================================== */
+#game-screen {
+    padding: 20px;
+    min-width: 600px;
+    max-width: 90vw;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+}
+
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.pause-button {
+    width: 80px;
+    height: 40px;
+    font-size: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.pause-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pause-button.paused {
+    background-color: #0000ff;
+}
+
+.menu-return-button {
+    width: 150px;
+    height: 40px;
+    font-size: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #323296;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.menu-return-button:hover {
+    background-color: #282882;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-return-button.hidden {
+    display: none;
+}
+
+/* ======================================
+   ゲームボード
+   ====================================== */
+.game-board {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+}
+
+.game-board.grid-4x4 {
+    grid-template-columns: repeat(4, 100px);
+}
+
+.game-board.grid-6x6 {
+    grid-template-columns: repeat(6, 100px);
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #c8c8c8;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    user-select: none;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.card:hover:not(.flipped):not(.matched) {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card.flipped,
+.card.matched {
+    background-color: #00ff00;
+    animation: flip 0.3s ease;
+}
+
+.card.matched {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+/* ======================================
+   ゲーム終了画面
+   ====================================== */
+#game-over-screen {
+    width: 600px;
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.game-over-title {
+    color: #ff0000;
+    font-size: 48px;
+    animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ======================================
+   レスポンシブデザイン
+   ====================================== */
+@media (max-width: 768px) {
+    .screen {
+        padding: 20px;
+        width: 95vw !important;
+        max-width: none;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    .board-button,
+    .time-setting,
+    .adjustment-content p,
+    .game-info {
+        font-size: 20px;
+    }
+    
+    .card {
+        width: 70px;
+        height: 70px;
+        font-size: 24px;
+    }
+    
+    .game-board.grid-4x4 {
+        grid-template-columns: repeat(4, 70px);
+    }
+    
+    .game-board.grid-6x6 {
+        grid-template-columns: repeat(6, 70px);
+    }
+}

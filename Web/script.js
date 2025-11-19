@@ -24,14 +24,14 @@ const GameConstants = {
 
 // 音階の定義（周波数）
 const NOTE_FREQUENCIES = {
-    "C4": 261.63,
-    "D4": 293.66,
-    "E4": 329.63,
-    "F4": 349.23,
-    "G4": 392.00,
-    "A4": 440.00,
-    "B4": 493.88,
-    "C5": 523.25
+    "ド": 261.63,
+    "レ": 293.66,
+    "ミ": 329.63,
+    "ファ": 349.23,
+    "ソ": 392.00,
+    "ラ": 440.00,
+    "シ": 493.88,
+    "ド(高)": 523.25
 };
 
 // ======================================
@@ -353,10 +353,13 @@ class GameManager {
         
         card.className = 'card';
         
-        if (state === 'flipped' || state === 'matched') {
+        if (state === 'matched') {
             card.classList.add(state);
             const note = this.gameState.deck.getCard(index);
             card.textContent = note;
+        } else if (state === 'flipped') {
+            card.classList.add(state);
+            card.textContent = '';
         } else {
             card.textContent = '';
         }
